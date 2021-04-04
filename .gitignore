@@ -1,3 +1,2 @@
 /venv
-/alembic
-alembic.ini
+/alembic/versions

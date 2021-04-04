@@ -3,8 +3,8 @@ import os
 class Config:
 
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
-    # SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:as89lokan07@localhost:5432/eventtt'
+    # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    SQLALCHEMY_DATABASE_URI = 'postgres://fqyswquqxqdlhn:d98455ef32eb7575a145638d0cc0f027d78e48c8f7f309799f4efc0f443a43b4@ec2-3-233-43-103.compute-1.amazonaws.com:5432/dac2db4dpvmdpv'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     FLASK_APP = "app.py"
     FLASK_DEBUG = 0

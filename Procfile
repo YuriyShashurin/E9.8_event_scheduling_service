@@ -1,5 +1,2 @@
-release: flask db init
-release: flask db migrate -m "Initial migration."
-release: flask db upgrade
-web: gunicorn .:app
+web: gunicorn app:app --log-file=-
 

@@ -17,5 +17,3 @@ bcrypt = Bcrypt(app)
 toolbar = DebugToolbarExtension(app)
 
 from events import routes, models, forms
-
-db.create_all()

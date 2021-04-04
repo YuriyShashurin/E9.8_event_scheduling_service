@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="list-group">
+    <h3 class="mb-3 ">События на завтра {{data.current_date}}</h3>
+    {% for event in data.events %}
+    {% if event.date_start == data.current_date %}
+    <div  class="list-group-item list-group-item-action d-flex justify-content-between mt-4">
+        <div class="d-flex flex-column w-50">
+            <h5 class="mb-3 fw-bold">{{event.title}}</h5>
+            <p class="mb-1">{{event.description}}</p>
+        </div>
+        <div class="d-flex flex-column w-25 align-items-center justify-content-between">
+            <h6 class="mb-2 fw-bold">Start time:</h6>
+            <h5 class="mb-2">{{event.date_start}} {{event.time_start}}</h5>
+            <p class="fw-bold mb-2">End time: </p>
+            <h5 class="mb-2">{{event.date_end}} {{event.time_end}}</h5>
+        </div>
+        <div class="d-flex flex-column w-25 justify-content-between">
+            <small> Добавил <span class="fw-bold text-danger"> {{event.owner.username}}</span></small>
+            {% if event.owner.username == current_user.username %}
+            <a href="/delete/{{ event.id }}" class="btn btn-primary text-decoration-none text-uppercase fw-bold"><small>Удалить</small></a>
+            <a href="/edit_event/{{ event.id }}" class="btn btn-primary text-decoration-none text-uppercase fw-bold"><small>Редактировать</small></a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+
+</div>
+
+{% endblock %}

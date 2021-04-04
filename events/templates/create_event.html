@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="d-flex justify-content-center mt-4">
+        <form class="d-flex flex-column" method="POST" action="/create_event">
+            <h2 class="text-white">ДОБАВИТЬ СОБЫТИЕ</h2>
+            <div class="d-flex flex-column">
+                {{ form.csrf_token }}
+                {{ form.title.label }} {{ form.title(size=100) }}
+                {{ form.description.label }}{{ form.description }}
+                {{ form.date_start.label }} {{ form.date_start }}
+                {{ form.time_start.label }} {{ form.time_start }}
+                {{ form.date_end.label }} {{ form.date_end }}
+                {{ form.time_end.label }} {{ form.time_end }}
+            </div>
+            <button class="btn btn-primary mt-3" type="submit" value="Go">Create</button>
+        </form>
+    </div>
+{% endblock %}
